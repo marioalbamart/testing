@@ -18,7 +18,7 @@ public class calc {
 
     // intro de app
     System.out.println(
-        "Bienvenido a mi calculadora.\nIntroduzca dos numeros y un operador.\nEjemplo: 2+2\nPara salir pulse 'q' + enter\n===========================");
+        "Bienvenido a mi calculadora.\nIntroduzca dos numeros y un operador.\nEjemplo: 2+2\nPara salir pulse 'q' + enter\n=====================================");
 
     while (bucle != true) { // bucle encargado de mantener la app ejecutandose
 
