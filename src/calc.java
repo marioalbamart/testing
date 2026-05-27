@@ -9,6 +9,7 @@ public class calc {
      * System.out.println(b);
      */
 
+    // declaracion de variables
     boolean bucle = false;
     StringBuilder num1 = new StringBuilder();
     StringBuilder num2 = new StringBuilder();
@@ -20,9 +21,11 @@ public class calc {
         "Bienvenido a mi calculadora.\nIntroduzca dos numeros y un operador.\nEjemplo: 2+2\nPara salir pulse 'q' + enter\n===========================");
 
     while (bucle != true) { // bucle encargado de mantener la app ejecutandose
+
+      // reset a cero variables.
       caseOpt = 'a';
-      num1.delete(0, num1.length());
-      num2.delete(0, num2.length());
+      num1 = new StringBuilder();
+      num2 = new StringBuilder();
 
       String input = IO.readln(); // Entrada de la operación ej(2+2)
 
@@ -34,6 +37,8 @@ public class calc {
         if (input.charAt(i) == 'q') {
           bucle = true;
           break;
+        } else if (input.charAt(i) == ' ') {
+          continue;
         }
 
         switch (input.charAt(i)) {
@@ -76,9 +81,34 @@ public class calc {
           default:
             break;
         }
+
       }
 
-      System.out.println(num1 + " " + opt + " " + num2);
+      if (bucle == true) {
+        break;
+      }
+
+      Double num1Int = Double.parseDouble(num1.toString());
+      Double num2Int = Double.parseDouble(num2.toString());
+
+      switch (opt) {
+        case "sum":
+          System.out.println(num1Int + num2Int);
+          break;
+
+        case "res":
+          System.out.println(num1Int - num2Int);
+          break;
+
+        case "mul":
+          System.out.println(num1Int * num2Int);
+          break;
+
+        case "div":
+          System.out.println(num1Int / num2Int);
+          break;
+
+      }
     }
   }
 }
