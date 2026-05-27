@@ -3,12 +3,6 @@ package src;
 public class calc {
   public static void main(String[] args) {
 
-    /*
-     * String a = "123";
-     * int b = Integer.parseInt(a);
-     * System.out.println(b);
-     */
-
     // declaracion de variables
     boolean bucle = false;
     StringBuilder num1 = new StringBuilder();
@@ -34,6 +28,7 @@ public class calc {
       // digit alphabet ...
       for (var i = 0; i < input.length(); i++) {
 
+        // salida de app
         if (input.charAt(i) == 'q') {
           bucle = true;
           break;
@@ -41,6 +36,7 @@ public class calc {
           continue;
         }
 
+        // gestion de operadores
         switch (input.charAt(i)) {
           case '+':
             opt = "sum";
@@ -66,6 +62,7 @@ public class calc {
             break;
         }
 
+        // cambio de variable para el input sb
         switch (caseOpt) {
           case 'a':
             if (Character.isDigit(input.charAt(i)) || input.charAt(i) == '.') {
@@ -84,13 +81,16 @@ public class calc {
 
       }
 
+      // solucion parse null
       if (bucle == true) {
         break;
       }
 
+      // paso de StringBuilder a string y a double
       Double num1Int = Double.parseDouble(num1.toString());
       Double num2Int = Double.parseDouble(num2.toString());
 
+      // output
       switch (opt) {
         case "sum":
           System.out.println(num1Int + num2Int);
