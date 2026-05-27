@@ -68,13 +68,13 @@ public class calc {
 
         switch (caseOpt) {
           case 'a':
-            if (Character.isDigit(input.charAt(i))) {
+            if (Character.isDigit(input.charAt(i)) || input.charAt(i) == '.') {
               num1.append(input.charAt(i));
             }
             break;
 
           case 'b':
-            if (Character.isDigit(input.charAt(i))) {
+            if (Character.isDigit(input.charAt(i)) || input.charAt(i) == '.') {
               num2.append(input.charAt(i));
             }
 
